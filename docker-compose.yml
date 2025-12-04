@@ -1,0 +1,17 @@
+services:
+  db:
+    image: postgres:17
+    container_name: smart-pg
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: "211021"
+      POSTGRES_DB: smartdb
+    volumes:
+      # all *.sql files here run once on first start (empty volume)
+      - ./db_dump:/docker-entrypoint-initdb.d:ro
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
