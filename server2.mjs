@@ -30,7 +30,8 @@ const isMSSQL = getDbType() === "mssql";
 let pdfContext = "";
 
 // TTS output location (served statically)
-const audioDir = "C:/Users/mehme/Documents/Unreal Projects/Bachelor/generated";   //anpassen
+//const audioDir = "C:/Users/mehme/Documents/Unreal Projects/Bachelor/generated";   //anpassen
+const audioDir = "C:/Users/Rabia/OneDrive/Dokumente/Esslingen/Bachelorarbeit/Backend_Bachelor-1/generated";
 const audioFilename = "reply.wav";
 const audioFullPath = `${audioDir}/${audioFilename}`;
 app.use("/audio", express.static(audioDir));
@@ -285,7 +286,8 @@ app.post("/api/record-and-process", async (req, res) => {
       .join("\n");
     fs.writeFileSync("history.txt", historyText);
 
-    const audioDir = "C:/Users/mehme/Documents/Unreal Projects/Bachelor/generated";
+    //const audioDir = "C:/Users/mehme/Documents/Unreal Projects/Bachelor/generated";
+    const audioDir = "C:/Users/Rabia/OneDrive/Dokumente/Esslingen/Bachelorarbeit/Backend_Bachelor-1/generated";
     const audioFilename = "reply.wav";
     const audioFullPath = `${audioDir}/${audioFilename}`;
 
@@ -298,7 +300,8 @@ app.post("/api/record-and-process", async (req, res) => {
     }
     console.log("🎙️ Recording completed");
 
-    const audioPath = "C:/Users/mehme/Documents/Unreal Projects/Bachelor/Test/voice.wav";
+    //const audioPath = "C:/Users/mehme/Documents/Unreal Projects/Bachelor/Test/voice.wav";
+    const audioPath = "C:/Users/Rabia/OneDrive/Dokumente/Esslingen/Bachelorarbeit/Backend_Bachelor-1/audio/voice.wav";
 
     // 2) transcribe with Whisper
     const whisper = spawnSync("py", ["-3.10", "whisper_stt.py", audioPath], { encoding: "utf-8" });

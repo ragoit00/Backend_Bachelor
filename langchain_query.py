@@ -47,7 +47,7 @@ try:
     print("Context length:", len(context), file=sys.stderr)
 
     # local LLM served by Ollama
-    llm = Ollama(model="llama3:8b", base_url="http://localhost:11434")
+    llm = Ollama(model="llama3:instruct", base_url="http://localhost:11434")
     print("LLM loaded", file=sys.stderr)
 
     # prompt: quiz mode expects Q/A style; chat mode answers based on retrieved context only
@@ -119,7 +119,7 @@ except Exception as e:
     print("Vector load failed. Falling back to direct model response.", file=sys.stderr)
     traceback.print_exc()
     try:
-        llm = Ollama(model="llama3:8b")
+        llm = Ollama(model="llama3:instruct")
         response = llm.invoke(message)
         print(response.strip())
     except Exception:

@@ -6,7 +6,8 @@ SAMPLE_RATE = 16000   # 16 kHz mic capture (good for STT)
 DURATION = 5          # seconds to record
 
 # where to save the WAV (ensure folder exists)
-output_path = r"C:\Users\mehme\Documents\Unreal Projects\Bachelor\Test\voice.wav" # an mein Ordner anpassen
+#output_path = r"C:\Users\mehme\Documents\Unreal Projects\Bachelor\Test\voice.wav" # an mein Ordner anpassen
+output_path = r"C:\Users\Rabia\OneDrive\Dokumente\Esslingen\Bachelorarbeit\Backend_Bachelor-1\voice.wav"
 os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
 try:

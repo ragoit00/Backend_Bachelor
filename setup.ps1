@@ -34,7 +34,7 @@ MSSQL_DATABASE=AI
 PG_USER=postgres
 PG_PASSWORD=211021
 PG_HOST=localhost
-PG_PORT=5432
+PG_PORT=5433
 PG_DATABASE=smartdb
 '@
   $envText | Set-Content -Path $envPath -Encoding UTF8
@@ -87,7 +87,8 @@ if (-not $ollamaOK) {
 
 # 6) Project folders
 H 'Project folders'
-$audioDir = 'C:\Users\mehme\Documents\Unreal Projects\Bachelor\generated'   # anpassen
+# $audioDir = 'C:\Users\mehme\Documents\Unreal Projects\Bachelor\generated'   # anpassen
+$audioDir = "C:\Users\Rabia\OneDrive\Dokumente\Esslingen\Bachelorarbeit\Backend_Bachelor-1\generated";
 $dirs = @(
   $audioDir,
   '.\knowledge_base',
