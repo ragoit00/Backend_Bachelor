@@ -88,7 +88,7 @@ if (-not $ollamaOK) {
 # 6) Project folders
 H 'Project folders'
 # $audioDir = 'C:\Users\mehme\Documents\Unreal Projects\Bachelor\generated'   # anpassen
-$audioDir = "C:\Users\Rabia\OneDrive\Dokumente\Esslingen\Bachelorarbeit\Backend_Bachelor-1\generated";
+$audioDir = "C:\Users\Rabia\OneDrive\Dokumente\Esslingen\Bachelorarbeit\Backend_Bachelor\generated";
 $dirs = @(
   $audioDir,
   '.\knowledge_base',
