@@ -31,7 +31,7 @@ let pdfContext = "";
 
 // TTS output location (served statically)
 //const audioDir = "C:/Users/mehme/Documents/Unreal Projects/Bachelor/generated";   //anpassen
-const audioDir = "C:/Users/Rabia/OneDrive/Dokumente/Esslingen/Bachelorarbeit/Backend_Bachelor/generated";
+const audioDir = "C:/Users/Rabia/OneDrive/Dokumente/Esslingen/Bachelorarbeit/Backend/Backend_Bachelor/generated";
 const audioFilename = "reply.wav";
 const audioFullPath = `${audioDir}/${audioFilename}`;
 app.use("/audio", express.static(audioDir));
@@ -287,7 +287,7 @@ app.post("/api/record-and-process", async (req, res) => {
     fs.writeFileSync("history.txt", historyText);
 
     //const audioDir = "C:/Users/mehme/Documents/Unreal Projects/Bachelor/generated";
-    const audioDir = "C:/Users/Rabia/OneDrive/Dokumente/Esslingen/Bachelorarbeit/Backend_Bachelor/generated";
+    const audioDir = "C:/Users/Rabia/OneDrive/Dokumente/Esslingen/Bachelorarbeit/Backend/Backend_Bachelor/generated";
     const audioFilename = "reply.wav";
     const audioFullPath = `${audioDir}/${audioFilename}`;
 

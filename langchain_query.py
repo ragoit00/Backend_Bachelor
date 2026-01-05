@@ -2,7 +2,8 @@ import sys
 import traceback
 
 from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain_community.vectorstores import FAISS
+from langchain_huggingface import HuggingFaceEmbeddings
+# from langchain_community.vectorstores import FAISS
 from langchain.chains import LLMChain
 from langchain_community.llms import Ollama
 from langchain.prompts import PromptTemplate
@@ -47,6 +48,7 @@ try:
     print("Context length:", len(context), file=sys.stderr)
 
     # local LLM served by Ollama
+    # llm = Ollama(model="llama3.2:3b", base_url="http://localhost:11434")
     llm = Ollama(model="llama3:instruct", base_url="http://localhost:11434")
     print("LLM loaded", file=sys.stderr)
 
@@ -119,6 +121,7 @@ except Exception as e:
     print("Vector load failed. Falling back to direct model response.", file=sys.stderr)
     traceback.print_exc()
     try:
+        # llm = Ollama(model="llama3.2:3b")
         llm = Ollama(model="llama3:instruct")
         response = llm.invoke(message)
         print(response.strip())
